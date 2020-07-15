@@ -1,16 +1,24 @@
 .App {
-    margin: 5rem auto;
+    margin: 0 auto;
     text-align: center;
-
+    background: $background-color;
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
 }
 
-h1 {
-    margin-bottom: 5rem;
+
+.CurrentCard {
+
+    img {
+        border: 4px double $font-color-1;
+        border-radius: .5rem;
+    }
 }
 
-button {
-    width: 20rem;
-    height: 5rem;
-    font-size: 2.5rem;
-    margin: 1rem;
+.Messages {
+    position: absolute;
+    left: 45%;
+    top: 12rem;
 }

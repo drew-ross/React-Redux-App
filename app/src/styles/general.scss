@@ -1,11 +1,39 @@
 h1 {
-    font-size: 3rem;
-}
-
-h2 {
-    font-size: 2.7rem;
+    font-size: 6rem;
+    margin: 5rem auto;
+    color: $font-color-1;
+    font-family: $font-header;
+    font-weight: 400;
 }
 
 p {
+    margin: 2rem auto;
+}
+
+p, button {
     font-size: 2rem;
+    color: $font-color-1;
+    font-family: $font-content;
+}
+
+button {
+    background: $button-color-1;
+    width: 20rem;
+    height: 5rem;
+    font-size: 2.5rem;
+    margin: 1rem;
+    border: 4px double $font-color-1;
+    border-radius: .5rem;
+
+    &:hover {
+        background: darkred;
+    }
+
+    &:active {
+        background: rgba(139, 0, 0, 0.336);
+    }
+
+    &:focus {
+        outline: none;
+    }
 }

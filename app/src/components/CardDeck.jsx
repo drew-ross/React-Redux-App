@@ -10,6 +10,7 @@ const CardDeck = props => {
 
     return (
         <div className="CardDeck">
+            <Messages isFetching={props.isFetching} errorMessage={props.errorMessage} />
             <button onClick={props.getNewDeck}>Get New Deck</button>
             <DrawCardButton 
             getCard={props.getCard} 
@@ -17,7 +18,6 @@ const CardDeck = props => {
             deckId={props.deckData.deck_id}
             />
             <CurrentCard currentCard={props.currentCard} />
-            <Messages isFetching={props.isFetching} errorMessage={props.errorMessage} />
         </div>
     );
 };

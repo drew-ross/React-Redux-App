@@ -10,7 +10,7 @@ const DrawCardButton = ({ remaining, getCard, deckId }) => {
                         getCard(
                             `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`
                         );
-                    }}>Draw New Card</button>
+                    }}>Draw Card</button>
             ) : (
                     <button disabled={true}>Out Of Cards</button>
                 )}
