@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-export const DRAW_CARD = 'DRAW_CARD';
-export const START_GET_NEW_DECK = 'START_GET_NEW_DECK';
+export const START_GET_DATA = 'START_GET_DATA';
 export const GET_NEW_DECK = 'GET_NEW_DECK';
-export const START_GET_CARD = 'START_GET_CARD';
 export const GET_CARD = 'GET_CARD';
 export const LOG_ERROR = 'LOG_ERROR';
 
@@ -11,7 +9,7 @@ export const LOG_ERROR = 'LOG_ERROR';
 const API_URL = 'https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1';
 
 export const getCard = url => dispatch => {
-    dispatch({ type: START_GET_CARD });
+    dispatch({ type: START_GET_DATA });
     axios.get(url)
         .then(res => {
             console.log(res.data);
@@ -21,7 +19,7 @@ export const getCard = url => dispatch => {
 };
 
 export const getNewDeck = () => dispatch => {
-    dispatch({ type: START_GET_NEW_DECK });
+    dispatch({ type: START_GET_DATA });
     axios.get(API_URL)
         .then(res => {
             console.log(res.data);

@@ -1,4 +1,4 @@
-import { GET_CARD, GET_NEW_DECK } from '../actions/rootActions';
+import { GET_CARD, GET_NEW_DECK, LOG_ERROR, START_GET_DATA } from '../actions/rootActions';
 import cardImg from '../img/card-back.png';
 
 // draw a card from the API
@@ -17,8 +17,8 @@ const initialState = {
         suit: '',
         code: ''
     },
-    cardText: '',
-    errorMessage: ''
+    errorMessage: '',
+    isFetching: false
 };
 
 
@@ -33,7 +33,9 @@ export const rootReducer = (state = initialState, action) => {
                     value: '',
                     suit: '',
                     code: ''
-                }
+                },
+                errorMessage: '',
+                isFetching: false
             };
         case GET_CARD:
             return {
@@ -42,7 +44,20 @@ export const rootReducer = (state = initialState, action) => {
                     ...state.deckData,
                     remaining: action.payload.remaining
                 },
-                currentCard: action.payload.cards[0]
+                currentCard: action.payload.cards[0],
+                errorMessage: '',
+                isFetching: false
+            };
+        case LOG_ERROR:
+            return {
+                ...state,
+                errorMessage: action.payload,
+                isFetching: false
+            };
+        case START_GET_DATA:
+            return {
+                ...state,
+                isFetching: true
             };
         default:
             return state;

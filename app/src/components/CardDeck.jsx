@@ -4,6 +4,7 @@ import { getCard, getNewDeck } from '../actions/rootActions';
 
 import CurrentCard from './CurrentCard';
 import DrawCardButton from './DrawCardButton';
+import Messages from './Messages';
 
 const CardDeck = props => {
 
@@ -16,6 +17,7 @@ const CardDeck = props => {
             deckId={props.deckData.deck_id}
             />
             <CurrentCard currentCard={props.currentCard} />
+            <Messages isFetching={props.isFetching} errorMessage={props.errorMessage} />
         </div>
     );
 };
@@ -24,8 +26,8 @@ const mapStateToProps = state => {
     return {
         deckData: state.deckData,
         currentCard: state.currentCard,
-        cardText: state.cardText,
-        errorMessage: state.errorMessage
+        errorMessage: state.errorMessage,
+        isFetching: state.isFetching
     };
 };
 
