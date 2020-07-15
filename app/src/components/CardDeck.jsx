@@ -1,13 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { drawCard, getNewDeck } from '../actions/rootActions';
+import { getCard, getNewDeck } from '../actions/rootActions';
+
+import CurrentCard from './CurrentCard';
+import DrawCardButton from './DrawCardButton';
 
 const CardDeck = props => {
+
     return (
         <div className="CardDeck">
             <h2>deck</h2>
             <button onClick={props.getNewDeck}>Get New Deck</button>
-            {props.deckData.deck_id && <p>{props.deckData.deck_id}</p>}
+            <DrawCardButton 
+            getCard={props.getCard} 
+            remaining={props.deckData.remaining}
+            deckId={props.deckData.deck_id}
+            />
+            <CurrentCard currentCard={props.currentCard} />
         </div>
     );
 };
@@ -21,4 +30,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, { drawCard, getNewDeck })(CardDeck);
+export default connect(mapStateToProps, { getCard, getNewDeck })(CardDeck);
