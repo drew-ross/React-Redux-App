@@ -9,7 +9,6 @@ const CardDeck = props => {
 
     return (
         <div className="CardDeck">
-            <h2>deck</h2>
             <button onClick={props.getNewDeck}>Get New Deck</button>
             <DrawCardButton 
             getCard={props.getCard} 

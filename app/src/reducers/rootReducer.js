@@ -1,4 +1,5 @@
 import { GET_CARD, GET_NEW_DECK } from '../actions/rootActions';
+import cardImg from '../img/card-back.png';
 
 // draw a card from the API
 // https://deckofcardsapi.com/api/deck/<<deck_id>>/draw/?count=1
@@ -11,7 +12,7 @@ const initialState = {
         remaining: 0
     },
     currentCard: {
-        image: null,
+        image: cardImg,
         value: '',
         suit: '',
         code: ''
@@ -26,7 +27,13 @@ export const rootReducer = (state = initialState, action) => {
         case GET_NEW_DECK:
             return {
                 ...state,
-                deckData: action.payload
+                deckData: action.payload,
+                currentCard: {
+                    image: cardImg,
+                    value: '',
+                    suit: '',
+                    code: ''
+                }
             };
         case GET_CARD:
             return {
