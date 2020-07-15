@@ -8,9 +8,9 @@ export const LOG_ERROR = 'LOG_ERROR';
 //deck of cards api
 const API_URL = 'https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1';
 
-export const getCard = url => dispatch => {
+export const getCard = deckId => dispatch => {
     dispatch({ type: START_GET_DATA });
-    axios.get(url)
+    axios.get(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`)
         .then(res => {
             console.log(res.data);
             dispatch({ type: GET_CARD, payload: res.data });

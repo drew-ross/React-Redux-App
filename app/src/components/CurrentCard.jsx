@@ -7,10 +7,7 @@ const CurrentCard = ({ currentCard }) => {
         <div className='CurrentCard'>
             <img src={currentCard.image} />
             {currentCard.value !== '' && (
-                <>
-                
                 <p>{`${currentCard.value} of ${currentCard.suit}`}</p>
-                </>
             )}
         </div>
     );
