@@ -1,0 +1,24 @@
+.App {
+    margin: 0 auto;
+    text-align: center;
+    background: $background-color;
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+
+.CurrentCard {
+
+    img {
+        border: 4px double $font-color-1;
+        border-radius: .5rem;
+    }
+}
+
+.Messages {
+    position: absolute;
+    left: 45%;
+    top: 12rem;
+}
